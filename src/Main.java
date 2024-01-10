@@ -1,18 +1,17 @@
 public class Main {
     public static void main(String[] args) {
 
-        int ticketCost = 15000; // Стоимость билета
+        int currenBalance = 100; // Начальный счет клиента
 
-        int milesPerRub = 15; // Количество рублей для одной бонусной мили
+        int topUpAmount = 1100; // Сумма пополнения
 
-        int bonusMiles = ticketCost / milesPerRub;
+        if (topUpAmount > 1000) {
+            int bonus = (topUpAmount - 1000) / 100; // Расчет бонуса currentBalance += topUpAmount + bonus;
 
-
-        System.out.println("За купленный билет начислено " + bonusMiles + " бонусных миль.");
-
-
-
-
-
+            System.out.println("Бонус: " + bonus + " рублей");
+        } else {
+            currenBalance += topUpAmount; // Итоговый счет без бонуса
+        }
+        System.out.println("Итоговый счет: " + currenBalance + " рублей");
     }
 }
